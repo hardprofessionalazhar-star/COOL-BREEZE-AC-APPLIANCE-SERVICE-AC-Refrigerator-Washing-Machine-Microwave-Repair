@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Cool Breeze | AC & Appliance Service | Secunderabad</title>
+  <!-- Google Fonts + simple reset -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 (free icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f8fafc;
+      color: #0f172a;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* buttons & utility */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: #1e293b;
+      color: white;
+      font-weight: 600;
+      padding: 12px 28px;
+      border-radius: 60px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .btn-wa {
+      background: #25D366;
+      box-shadow: 0 6px 14px rgba(37, 211, 102, 0.3);
+    }
+
+    .btn-wa:hover {
+      background: #20b859;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(37, 211, 102, 0.4);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid #0f172a;
+      color: #0f172a;
+    }
+
+    .btn-outline:hover {
+      background: #eef2ff;
+      transform: translateY(-2px);
+    }
+
+    /* header */
+    .top-bar {
+      background: #0c4a6e;
+      color: white;
+      padding: 8px 0;
+      font-size: 0.85rem;
+      text-align: center;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .logo h1 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #0284c7, #0f172a);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .logo p {
+      font-size: 0.8rem;
+      color: #334155;
+      font-weight: 500;
+    }
+
+    .contact-header {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .contact-header a {
+      text-decoration: none;
+      color: #1e293b;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Hero section */
+    .hero {
+      background: linear-gradient(135deg, #e0f2fe 0%, #ffffff 100%);
+      border-radius: 40px;
+      margin: 20px 0 40px;
+      padding: 48px 40px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+    }
+
+    .hero-content h2 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      line-height: 1.2;
+      color: #0c4a6e;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      margin: 16px 0 24px;
+      color: #334155;
+    }
+
+    .hero-badge {
+      background: #fef9c3;
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      margin-bottom: 20px;
+    }
+
+    /* services grid */
+    .section {
+      padding: 60px 0 40px;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    .section-sub {
+      text-align: center;
+      color: #475569;
+      max-width: 680px;
+      margin: 0 auto 48px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 30px;
+    }
+
+    .service-card {
+      background: white;
+      border-radius: 32px;
+      padding: 32px 20px;
+      text-align: center;
+      box-shadow: 0 12px 24px -12px rgba(0,0,0,0.08);
+      transition: 0.2s;
+      border: 1px solid #e2e8f0;
+    }
+
+    .service-card i {
+      font-size: 2.8rem;
+      color: #0284c7;
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+    }
+
+    /* special offers */
+    .offers {
+      background: #f1f5f9;
+      border-radius: 48px;
+      padding: 48px 32px;
+      margin: 40px 0;
+    }
+
+    .offers-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 32px;
+      margin-top: 32px;
+    }
+
+    .offer-item {
+      background: white;
+      border-radius: 28px;
+      padding: 24px;
+      text-align: center;
+      min-width: 180px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.03);
+    }
+
+    .price {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .price small {
+      font-size: 1rem;
+      font-weight: 400;
+    }
+
+    /* reviews */
+    .reviews-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      justify-content: center;
+      margin: 40px 0;
+    }
+
+    .review-card {
+      background: white;
+      border-radius: 28px;
+      padding: 28px;
+      max-width: 320px;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+      border: 1px solid #eef2ff;
+    }
+
+    .stars {
+      color: #fbbf24;
+      margin-bottom: 12px;
+    }
+
+    /* form + map */
+    .contact-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin: 60px 0;
+      background: white;
+      border-radius: 48px;
+      padding: 40px;
+      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.05);
+    }
+
+    .form-box {
+      flex: 1.2;
+    }
+
+    .form-box input, .form-box textarea {
+      width: 100%;
+      padding: 14px 18px;
+      margin-bottom: 18px;
+      border: 1px solid #cbd5e1;
+      border-radius: 28px;
+      font-family: inherit;
+      font-size: 1rem;
+      outline: none;
+      transition: 0.2s;
+    }
+
+    .form-box input:focus, .form-box textarea:focus {
+      border-color: #0284c7;
+      box-shadow: 0 0 0 3px rgba(2,132,199,0.2);
+    }
+
+    .location-box {
+      flex: 0.9;
+      background: #f1f5f9;
+      border-radius: 32px;
+      padding: 24px;
+    }
+
+    .whatsapp-btn-large {
+      background: #25D366;
+      color: white;
+      border: none;
+      width: 100%;
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-top: 8px;
+    }
+
+    footer {
+      border-top: 1px solid #e2e8f0;
+      padding: 40px 0 28px;
+      text-align: center;
+      color: #475569;
+    }
+
+    @media (max-width: 780px) {
+      .hero-content h2 {
+        font-size: 2rem;
+      }
+      .navbar {
+        flex-direction: column;
+        text-align: center;
+      }
+      .contact-section {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="container">
+    ⚡ Fast • Reliable • Affordable | Same-day service in North Lalaguda & surrounding areas
+  </div>
+</div>
+
+<div class="container">
+  <!-- Navigation -->
+  <div class="navbar">
+    <div class="logo">
+      <h1>❄️ Cool Breeze</h1>
+      <p>AC & Appliance Service</p>
+    </div>
+    <div class="contact-header">
+      <a href="tel:+9182966832"><i class="fas fa-phone-alt"></i> +91 82966 832</a>
+      <a href="https://wa.me/9182966832?text=Hi%20Cool%20Breeze%2C%20I%20need%20service%20for%20my%20appliance" target="_blank" class="btn-wa btn" style="padding: 8px 20px;"><i class="fab fa-whatsapp"></i> Book on WhatsApp</a>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">🔧 Trusted in Secunderabad since 2015</div>
+      <h2>AC & Appliance <br>Repair Experts</h2>
+      <p>Fast, reliable & affordable service for AC, Refrigerator, Washing Machine & Microwave. Free inspection with every repair!</p>
+      <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+        <a href="https://wa.me/9182966832?text=Hello%20Cool%20Breeze!%20I%20need%20urgent%20AC%20service" target="_blank" class="btn btn-wa"><i class="fab fa-whatsapp"></i> Book on WhatsApp</a>
+        <a href="#contact-form" class="btn btn-outline"><i class="fas fa-clipboard-list"></i> Get Quote</a>
+      </div>
+      <div style="margin-top: 28px; display: flex; gap: 18px; font-size: 0.9rem; color: #1e293b;">
+        <span><i class="fas fa-map-marker-alt"></i> North Lalaguda, Secunderabad</span>
+        <span><i class="fas fa-clock"></i> Open 8 AM – 8 PM</span>
+      </div>
+    </div>
+    <div style="flex:1; min-width: 200px; text-align: center;">
+      <i class="fas fa-snowflake" style="font-size: 120px; color: #0c4a6e; opacity: 0.7;"></i>
+      <i class="fas fa-tools" style="font-size: 80px; color: #0284c7; margin-left: 10px;"></i>
+    </div>
+  </div>
+
+  <!-- Our Services Section -->
+  <div class="section">
+    <h2 class="section-title"><i class="fas fa-wrench"></i> Our Services</h2>
+    <p class="section-sub">Professional repair & maintenance for all major appliances</p>
+    <div class="services-grid">
+      <div class="service-card"><i class="fas fa-wind"></i><h3>AC Repair & Service</h3><p>Split, Window, Ducted AC – Gas refill, cleaning, repair</p></div>
+      <div class="service-card"><i class="fas fa-temperature-low"></i><h3>Refrigerator Repair</h3><p>Fridge cooling issues, thermostat, compressor, gas charging</p></div>
+      <div class="service-card"><i class="fas fa-tshirt"></i><h3>Washing Machine Repair</h3><p>Front load, top load – drum not spinning, drain problems</p></div>
+      <div class="service-card"><i class="fas fa-microwave"></i><h3>Microwave Repair</h3><p>Not heating, turntable issues, keypad repair</p></div>
+    </div>
+  </div>
+
+  <!-- Special Offers -->
+  <div class="offers">
+    <h2 class="section-title" style="margin-bottom: 8px;">🔥 Special Offers</h2>
+    <p class="section-sub" style="margin-bottom: 16px;">Limited time discount for new customers</p>
+    <div class="offers-grid">
+      <div class="offer-item"><span class="price">₹499</span><br>AC Servicing<br><small>(cleaning + gas check)</small></div>
+      <div class="offer-item"><span class="price">₹599</span><br>Foam Servicing<br><small>(deep clean AC)</small></div>
+      <div class="offer-item"><span class="price">₹299</span><br>AC Inspection<br><small>(diagnostic only)</small></div>
+    </div>
+  </div>
+
+  <!-- Customer Reviews -->
+  <div class="section" style="padding-top: 0;">
+    <h2 class="section-title"><i class="fas fa-star"></i> Customer Reviews</h2>
+    <div class="reviews-grid">
+      <div class="review-card"><div class="stars">★★★★★</div><p>“Very fast AC service. Highly recommended!”</p><strong>- Ravi K.</strong></div>
+      <div class="review-card"><div class="stars">★★★★★</div><p>“Affordable and professional work. Fixed my fridge in 2 hours.”</p><strong>- Priya S.</strong></div>
+      <div class="review-card"><div class="stars">★★★★☆</div><p>“Quick response & genuine spare parts. Will use again.”</p><strong>- Anil Reddy</strong></div>
+    </div>
+  </div>
+
+  <!-- Contact Form + Location + WhatsApp integration -->
+  <div id="contact-form" class="contact-section">
+    <div class="form-box">
+      <h3><i class="fas fa-headset"></i> Request a Service</h3>
+      <p style="margin-bottom: 20px;">Fill the details and we’ll reach out or you can message directly on WhatsApp.</p>
+      <input type="text" id="userName" placeholder="Your Name" autocomplete="name">
+      <input type="tel" id="userPhone" placeholder="Phone Number" autocomplete="tel">
+      <textarea id="userProblem" rows="3" placeholder="Your Problem (e.g., AC not cooling, fridge leakage...)"></textarea>
+      <button id="sendWhatsappBtn" class="btn btn-wa whatsapp-btn-large"><i class="fab fa-whatsapp"></i> Send on WhatsApp</button>
+      <p style="font-size: 0.75rem; margin-top: 12px; text-align: center;">✅ Our team replies within 30 min</p>
+    </div>
+    <div class="location-box">
+      <h3><i class="fas fa-map-pin"></i> Our Location</h3>
+      <p><strong>📍 North Lalaguda, Secunderabad</strong><br>Near Old Alwal, landmark: Sri Rama Temple Lane</p>
+      <div style="margin: 20px 0; background: #e2e8f0; border-radius: 24px; padding: 16px; text-align: center;">
+        <i class="fas fa-map-marker-alt" style="font-size: 40px; color:#0c4a6e;"></i>
+        <p style="margin-top: 8px;"><strong>📞 Call us:</strong> <a href="tel:+9182966832">+91 82966 832</a></p>
+        <a href="https://maps.google.com/?q=North+Lalaguda+Secunderabad" target="_blank" class="btn-outline btn" style="margin-top: 12px; padding: 8px 16px;">Open in Maps →</a>
+      </div>
+      <div style="font-size: 0.9rem;">
+        <i class="fas fa-check-circle" style="color:#25D366;"></i> Same-day service<br>
+        <i class="fas fa-rupee-sign"></i> Best price guarantee
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>❄️ Cool Breeze AC & Appliance Service — Fast • Reliable • Affordable</p>
+    <p style="margin: 12px 0;">📍 North Lalaguda, Secunderabad, Telangana | 📞 <a href="tel:+9182966832" style="color:#0f172a;">+91 82966 832</a></p>
+    <div style="display: flex; justify-content: center; gap: 24px; margin-top: 16px;">
+      <a href="https://wa.me/9182966832?text=Hi%2C%20I%20need%20appliance%20repair" target="_blank" style="color:#25D366; font-size: 1.5rem;"><i class="fab fa-whatsapp"></i></a>
+      <a href="tel:+9182966832" style="color:#0284c7; font-size: 1.5rem;"><i class="fas fa-phone-alt"></i></a>
+    </div>
+    <p style="margin-top: 28px; font-size: 0.75rem;">© 2025 Cool Breeze | AC, Refrigerator, Washing Machine, Microwave Expert</p>
+  </footer>
+</div>
+
+<script>
+  (function() {
+    // WhatsApp integration for contact form + pre-filled message
+    const phoneNumber = "9182966832";  // official number from the brief (9182966832)
+    const sendBtn = document.getElementById('sendWhatsappBtn');
+    const nameInput = document.getElementById('userName');
+    const phoneInput = document.getElementById('userPhone');
+    const problemInput = document.getElementById('userProblem');
+
+    function formatWhatsAppMessage() {
+      const name = nameInput ? nameInput.value.trim() : '';
+      const userPhone = phoneInput ? phoneInput.value.trim() : '';
+      const problem = problemInput ? problemInput.value.trim() : '';
+
+      let message = "Hello Cool Breeze! I need appliance service.%0A";
+      if (name) message += `*Name:* ${name}%0A`;
+      if (userPhone) message += `*My contact:* ${userPhone}%0A`;
+      if (problem) message += `*Issue:* ${problem}%0A`;
+      else message += `*Issue:* Need service for AC / appliance.%0A`;
+      message += `%0A📍 Location: North Lalaguda / Secunderabad area`;
+      return message;
+    }
+
+    if (sendBtn) {
+      sendBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        // simple validation: at least name or phone should be filled
+        const nameVal = nameInput ? nameInput.value.trim() : '';
+        const phoneVal = phoneInput ? phoneInput.value.trim() : '';
+        if (!nameVal && !phoneVal) {
+          alert("⚠️ Please enter at least your name or phone number so we can assist you.");
+          return;
+        }
+        const waMessage = formatWhatsAppMessage();
+        const waLink = `https://wa.me/${phoneNumber}?text=${waMessage}`;
+        window.open(waLink, '_blank');
+      });
+    }
+
+    // Also make all "Book on WhatsApp" buttons and hero button work dynamically with pre-filled message
+    const waButtons = document.querySelectorAll('.btn-wa');
+    waButtons.forEach(btn => {
+      // avoid double attaching to the main send button, but safe to attach generic fallback
+      if (btn.id !== 'sendWhatsappBtn') {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          let prefillMsg = "Hi Cool Breeze! I need AC or appliance service. Please share details.";
+          const customMsg = encodeURIComponent(prefillMsg);
+          window.open(`https://wa.me/${phoneNumber}?text=${customMsg}`, '_blank');
+        });
+      }
+    });
+  })();
+</script>
+</body>
+</html>
